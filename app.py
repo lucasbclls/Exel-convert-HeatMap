@@ -26,7 +26,7 @@ def geocode_address(address):
 st.title("Mapeamento de Incidentes")
 
 # Upload do arquivo Excel
-st.subheader("Faça o upload da planilha com colunas 'Endereço', 'Data Abertura', 'Data Fechamento'")
+st.subheader("Faça o upload da planilha com colunas 'Motivo' 'Endereço', 'Data Abertura', 'Data Fechamento'")
 uploaded_file = st.file_uploader("Escolha um arquivo Excel", type=["xlsx"])
 
 if uploaded_file is not None:
