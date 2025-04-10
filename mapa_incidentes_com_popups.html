@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_461c013f4a45cb61448cb7daf0ef062b {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_461c013f4a45cb61448cb7daf0ef062b" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_461c013f4a45cb61448cb7daf0ef062b = L.map(
+                "map_461c013f4a45cb61448cb7daf0ef062b",
+                {
+                    center: [-20.3222, -40.3381],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_1a62c967097fd3aa96d5b4c0710c545e = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_1a62c967097fd3aa96d5b4c0710c545e.addTo(map_461c013f4a45cb61448cb7daf0ef062b);
+        
+    
+            var heat_map_a2349de8224cbc65eb13717ca3e523e3 = L.heatLayer(
+                [[-20.35666307436337, -40.44161907712581], [-20.333720553515747, -40.361558336539865], [-20.351090651114152, -40.32448778496488], [-20.355154418025965, -40.33949970548883], [-20.3364361114926, -40.300861711972885], [-20.355154418025965, -40.33949970548883], [-20.355154418025965, -40.33949970548883], [-19.40098873724006, -40.06511237687792], [-19.406677550759536, -40.06192510124569], [-20.66900328172031, -40.49868017750507], [-20.33885215408732, -40.28543766914831], [-20.284783068898577, -40.300349052739065], [-20.284783068898577, -40.300349052739065], [-20.28429965, -40.30167166899088], [-20.28429965, -40.30167166899088], [-20.3188211, -40.33140787996679]],
+                {
+  "minOpacity": 0.5,
+  "maxZoom": 18,
+  "radius": 25,
+  "blur": 15,
+}
+            );
+        
+    
+            heat_map_a2349de8224cbc65eb13717ca3e523e3.addTo(map_461c013f4a45cb61448cb7daf0ef062b);
+        
+    
+            var marker_cluster_9a2f939b946aa86a1df5f86e2e99e365 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_58c6c54cc73f9100cc24b3ee46dbb4b9 = L.marker(
+                [-20.35666307436337, -40.44161907712581],
+                {
+}
+            ).addTo(marker_cluster_9a2f939b946aa86a1df5f86e2e99e365);
+        
+    
+            var icon_f297d47002bbddeaf050cdc14f80af02 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ba85b480e0d37942882d4da1a3b38fd1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4d39a823163760f3fb8d739872fa6488 = $(`<div id="html_4d39a823163760f3fb8d739872fa6488" style="width: 100.0%; height: 100.0%;">             <strong>Endereço:</strong> Av. Alcacibas Furtado, 36 - Canaã, Viana<br>             <strong>Data Abertura:</strong> 2025-03-27 09:33:00<br>             <strong>Motivo:</strong> RAL<br>             <strong>Data Fechamento:</strong> 2025-03-27 00:00:00             </div>`)[0];
+                popup_ba85b480e0d37942882d4da1a3b38fd1.setContent(html_4d39a823163760f3fb8d739872fa6488);
+            
+        
+
+        marker_58c6c54cc73f9100cc24b3ee46dbb4b9.bindPopup(popup_ba85b480e0d37942882d4da1a3b38fd1)
+        ;
+
+        
+    
+    
+                marker_58c6c54cc73f9100cc24b3ee46dbb4b9.setIcon(icon_f297d47002bbddeaf050cdc14f80af02);
+            
+    
+            var marker_d8091f4de67c99f583eba6fdcaa43e9d = L.marker(
+                [-20.333720553515747, -40.361558336539865],
+                {
+}
+            ).addTo(marker_cluster_9a2f939b946aa86a1df5f86e2e99e365);
+        
+    
+            var icon_42b13acf2f5af8cf1f6f24ff0ceb8f2d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_70ebfe7398de4ab820517595b577e566 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e5e86afac0e89f8ff76e766f9dc78db8 = $(`<div id="html_e5e86afac0e89f8ff76e766f9dc78db8" style="width: 100.0%; height: 100.0%;">             <strong>Endereço:</strong> Av. América, 05 - Jardim América, Cariacica<br>             <strong>Data Abertura:</strong> 2025-01-19 09:39:00<br>             <strong>Motivo:</strong> RAL<br>             <strong>Data Fechamento:</strong> 2025-01-19 00:00:00             </div>`)[0];
+                popup_70ebfe7398de4ab820517595b577e566.setContent(html_e5e86afac0e89f8ff76e766f9dc78db8);
+            
+        
+
+        marker_d8091f4de67c99f583eba6fdcaa43e9d.bindPopup(popup_70ebfe7398de4ab820517595b577e566)
+        ;
+
+        
+    
+    
+                marker_d8091f4de67c99f583eba6fdcaa43e9d.setIcon(icon_42b13acf2f5af8cf1f6f24ff0ceb8f2d);
+            
+    
+            var marker_df72e558c495b46439504db02013e351 = L.marker(
+                [-20.351090651114152, -40.32448778496488],
+                {
+}
+            ).addTo(marker_cluster_9a2f939b946aa86a1df5f86e2e99e365);
+        
+    
+            var icon_8c15cb892da16e8ff417c2ef9eddd66d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cf43bd4b276657a7f6b517e8e2b488c5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_414b55ae2af40ebbcba625324883effd = $(`<div id="html_414b55ae2af40ebbcba625324883effd" style="width: 100.0%; height: 100.0%;">             <strong>Endereço:</strong> Av. Carlos Lindenberg - Ataíde, Vila Velha <br>             <strong>Data Abertura:</strong> 2025-01-06 11:56:00<br>             <strong>Motivo:</strong> RAL<br>             <strong>Data Fechamento:</strong> 2025-01-06 00:00:00             </div>`)[0];
+                popup_cf43bd4b276657a7f6b517e8e2b488c5.setContent(html_414b55ae2af40ebbcba625324883effd);
+            
+        
+
+        marker_df72e558c495b46439504db02013e351.bindPopup(popup_cf43bd4b276657a7f6b517e8e2b488c5)
+        ;
+
+        
+    
+    
+                marker_df72e558c495b46439504db02013e351.setIcon(icon_8c15cb892da16e8ff417c2ef9eddd66d);
+            
+    
+            var marker_85723e7ac543cd903807e580520d6ce6 = L.marker(
+                [-20.355154418025965, -40.33949970548883],
+                {
+}
+            ).addTo(marker_cluster_9a2f939b946aa86a1df5f86e2e99e365);
+        
+    
+            var icon_3ba635d506ee8fc6d8cd5a1cd8ad150a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c0d1f80349fc5f7e7998df68d589f2b1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0f0a7c21577ae4d449b803a02ebfe920 = $(`<div id="html_0f0a7c21577ae4d449b803a02ebfe920" style="width: 100.0%; height: 100.0%;">             <strong>Endereço:</strong> Av. Carlos Lindenberg - Planalto, Vila Velha<br>             <strong>Data Abertura:</strong> 2025-03-07 12:03:00<br>             <strong>Motivo:</strong> RAL<br>             <strong>Data Fechamento:</strong> 2025-03-07 00:00:00             </div>`)[0];
+                popup_c0d1f80349fc5f7e7998df68d589f2b1.setContent(html_0f0a7c21577ae4d449b803a02ebfe920);
+            
+        
+
+        marker_85723e7ac543cd903807e580520d6ce6.bindPopup(popup_c0d1f80349fc5f7e7998df68d589f2b1)
+        ;
+
+        
+    
+    
+                marker_85723e7ac543cd903807e580520d6ce6.setIcon(icon_3ba635d506ee8fc6d8cd5a1cd8ad150a);
+            
+    
+            var marker_f5690ecd52bc691942083cdae177e814 = L.marker(
+                [-20.3364361114926, -40.300861711972885],
+                {
+}
+            ).addTo(marker_cluster_9a2f939b946aa86a1df5f86e2e99e365);
+        
+    
+            var icon_7c6ef9fc935cf05ff7440e2276aea01e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ae4636832c92b549735c67297b0b7e7f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_19ab3ed57e07dfd6d71c6717525b02a3 = $(`<div id="html_19ab3ed57e07dfd6d71c6717525b02a3" style="width: 100.0%; height: 100.0%;">             <strong>Endereço:</strong> Av. Carlos Lindenberg, 209 - Ilha dos Ayres, Vila Velha<br>             <strong>Data Abertura:</strong> 2025-03-12 06:05:00<br>             <strong>Motivo:</strong> RAL<br>             <strong>Data Fechamento:</strong> 2025-03-12 00:00:00             </div>`)[0];
+                popup_ae4636832c92b549735c67297b0b7e7f.setContent(html_19ab3ed57e07dfd6d71c6717525b02a3);
+            
+        
+
+        marker_f5690ecd52bc691942083cdae177e814.bindPopup(popup_ae4636832c92b549735c67297b0b7e7f)
+        ;
+
+        
+    
+    
+                marker_f5690ecd52bc691942083cdae177e814.setIcon(icon_7c6ef9fc935cf05ff7440e2276aea01e);
+            
+    
+            var marker_fdfe435b0099a9871bdcbbc01b5a4177 = L.marker(
+                [-20.355154418025965, -40.33949970548883],
+                {
+}
+            ).addTo(marker_cluster_9a2f939b946aa86a1df5f86e2e99e365);
+        
+    
+            var icon_acdd0ab14b4bc996b4b55ce67f981f50 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b90b3790d4de59184d5b36aaa258aae1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cad0fb373a7bca7ad854454419dd0748 = $(`<div id="html_cad0fb373a7bca7ad854454419dd0748" style="width: 100.0%; height: 100.0%;">             <strong>Endereço:</strong> Av. Carlos Lindenberg, 4393 - Planalto, Vila Velha <br>             <strong>Data Abertura:</strong> 2025-03-21 05:04:00<br>             <strong>Motivo:</strong> RAL<br>             <strong>Data Fechamento:</strong> 2025-03-21 00:00:00             </div>`)[0];
+                popup_b90b3790d4de59184d5b36aaa258aae1.setContent(html_cad0fb373a7bca7ad854454419dd0748);
+            
+        
+
+        marker_fdfe435b0099a9871bdcbbc01b5a4177.bindPopup(popup_b90b3790d4de59184d5b36aaa258aae1)
+        ;
+
+        
+    
+    
+                marker_fdfe435b0099a9871bdcbbc01b5a4177.setIcon(icon_acdd0ab14b4bc996b4b55ce67f981f50);
+            
+    
+            var marker_93a3d3fc70639f464d57de115cb3dddc = L.marker(
+                [-20.355154418025965, -40.33949970548883],
+                {
+}
+            ).addTo(marker_cluster_9a2f939b946aa86a1df5f86e2e99e365);
+        
+    
+            var icon_137c8de0b70fb96e0929936a787456c0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1ad67e4667b2ddec08a1c80769d8454a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3c0e4dd5787f90c57ff54946219babc8 = $(`<div id="html_3c0e4dd5787f90c57ff54946219babc8" style="width: 100.0%; height: 100.0%;">             <strong>Endereço:</strong> Av. Carlos Lindenberg, 5091 - Planalto, Vila Velha<br>             <strong>Data Abertura:</strong> 2025-03-20 01:19:00<br>             <strong>Motivo:</strong> RAL<br>             <strong>Data Fechamento:</strong> 2025-03-20 00:00:00             </div>`)[0];
+                popup_1ad67e4667b2ddec08a1c80769d8454a.setContent(html_3c0e4dd5787f90c57ff54946219babc8);
+            
+        
+
+        marker_93a3d3fc70639f464d57de115cb3dddc.bindPopup(popup_1ad67e4667b2ddec08a1c80769d8454a)
+        ;
+
+        
+    
+    
+                marker_93a3d3fc70639f464d57de115cb3dddc.setIcon(icon_137c8de0b70fb96e0929936a787456c0);
+            
+    
+            var marker_03b62ddd4820222c9d4c7baa84401dd6 = L.marker(
+                [-19.40098873724006, -40.06511237687792],
+                {
+}
+            ).addTo(marker_cluster_9a2f939b946aa86a1df5f86e2e99e365);
+        
+    
+            var icon_8c8449fd5c3b8f0f42994952c8a17822 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4330e941370ca7f267b909becc9d861c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c69c9ffbc7eeda584e17bfe59d07cee0 = $(`<div id="html_c69c9ffbc7eeda584e17bfe59d07cee0" style="width: 100.0%; height: 100.0%;">             <strong>Endereço:</strong> Av. Comendador Rafael, 1446 - Centro, Linhares<br>             <strong>Data Abertura:</strong> 2025-03-05 02:09:00<br>             <strong>Motivo:</strong> RAL<br>             <strong>Data Fechamento:</strong> 2025-03-05 00:00:00             </div>`)[0];
+                popup_4330e941370ca7f267b909becc9d861c.setContent(html_c69c9ffbc7eeda584e17bfe59d07cee0);
+            
+        
+
+        marker_03b62ddd4820222c9d4c7baa84401dd6.bindPopup(popup_4330e941370ca7f267b909becc9d861c)
+        ;
+
+        
+    
+    
+                marker_03b62ddd4820222c9d4c7baa84401dd6.setIcon(icon_8c8449fd5c3b8f0f42994952c8a17822);
+            
+    
+            var marker_8c896923abe1d990af519b749579faa3 = L.marker(
+                [-19.406677550759536, -40.06192510124569],
+                {
+}
+            ).addTo(marker_cluster_9a2f939b946aa86a1df5f86e2e99e365);
+        
+    
+            var icon_2f90d9a02a8d0fc01f70b0cd80a5d183 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f2d060db9e161a17ab73b7a80c791df1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f746ac806bfb7eb241ab19a6b5fe08ff = $(`<div id="html_f746ac806bfb7eb241ab19a6b5fe08ff" style="width: 100.0%; height: 100.0%;">             <strong>Endereço:</strong> Av. Comendador Rafael, sn - Aviso, Linhares <br>             <strong>Data Abertura:</strong> 2025-01-05 03:27:00<br>             <strong>Motivo:</strong> RAL<br>             <strong>Data Fechamento:</strong> 2025-01-05 00:00:00             </div>`)[0];
+                popup_f2d060db9e161a17ab73b7a80c791df1.setContent(html_f746ac806bfb7eb241ab19a6b5fe08ff);
+            
+        
+
+        marker_8c896923abe1d990af519b749579faa3.bindPopup(popup_f2d060db9e161a17ab73b7a80c791df1)
+        ;
+
+        
+    
+    
+                marker_8c896923abe1d990af519b749579faa3.setIcon(icon_2f90d9a02a8d0fc01f70b0cd80a5d183);
+            
+    
+            var marker_eef77abddb25499fea30d2bf5cd5fcff = L.marker(
+                [-20.66900328172031, -40.49868017750507],
+                {
+}
+            ).addTo(marker_cluster_9a2f939b946aa86a1df5f86e2e99e365);
+        
+    
+            var icon_1aea7136e3fa15a077963c3ab5404e74 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_06cfb2f62fb2893fec2c11dc32de2571 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2db88725dfcd2c785cd39b2216a8ef5f = $(`<div id="html_2db88725dfcd2c785cd39b2216a8ef5f" style="width: 100.0%; height: 100.0%;">             <strong>Endereço:</strong> Av. Davino Mattos, 33 - Centro, Guarapari<br>             <strong>Data Abertura:</strong> 2025-03-12 01:17:00<br>             <strong>Motivo:</strong> RAL<br>             <strong>Data Fechamento:</strong> 2025-03-12 00:00:00             </div>`)[0];
+                popup_06cfb2f62fb2893fec2c11dc32de2571.setContent(html_2db88725dfcd2c785cd39b2216a8ef5f);
+            
+        
+
+        marker_eef77abddb25499fea30d2bf5cd5fcff.bindPopup(popup_06cfb2f62fb2893fec2c11dc32de2571)
+        ;
+
+        
+    
+    
+                marker_eef77abddb25499fea30d2bf5cd5fcff.setIcon(icon_1aea7136e3fa15a077963c3ab5404e74);
+            
+    
+            var marker_18bef5dd921ae007819058cca6481a33 = L.marker(
+                [-20.33885215408732, -40.28543766914831],
+                {
+}
+            ).addTo(marker_cluster_9a2f939b946aa86a1df5f86e2e99e365);
+        
+    
+            var icon_16aa4fa5394d9b747f84d26cd4c926a3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ab0ac895bcf128af4527a5efd721e155 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dba66ea247276c7509fcea2a12e5015e = $(`<div id="html_dba66ea247276c7509fcea2a12e5015e" style="width: 100.0%; height: 100.0%;">             <strong>Endereço:</strong> Av. Dr. Olivio Lira, 354 - Praia da Costa, Vila Velha<br>             <strong>Data Abertura:</strong> 2025-02-20 08:58:00<br>             <strong>Motivo:</strong> RAL<br>             <strong>Data Fechamento:</strong> 2025-02-20 00:00:00             </div>`)[0];
+                popup_ab0ac895bcf128af4527a5efd721e155.setContent(html_dba66ea247276c7509fcea2a12e5015e);
+            
+        
+
+        marker_18bef5dd921ae007819058cca6481a33.bindPopup(popup_ab0ac895bcf128af4527a5efd721e155)
+        ;
+
+        
+    
+    
+                marker_18bef5dd921ae007819058cca6481a33.setIcon(icon_16aa4fa5394d9b747f84d26cd4c926a3);
+            
+    
+            var marker_00b4139d033b00ee0e958840a2745c48 = L.marker(
+                [-20.284783068898577, -40.300349052739065],
+                {
+}
+            ).addTo(marker_cluster_9a2f939b946aa86a1df5f86e2e99e365);
+        
+    
+            var icon_0ddf4aa64dd9cb85b6259f057dd585a0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ce8830f5043bf4ec85b59305c4992da8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d6098e2e29681207c0eb4780da5becd8 = $(`<div id="html_d6098e2e29681207c0eb4780da5becd8" style="width: 100.0%; height: 100.0%;">             <strong>Endereço:</strong> Av. Dr. Pedro Feu Rosa - Jardim da Penha, Vitória <br>             <strong>Data Abertura:</strong> 2025-04-05 03:54:00<br>             <strong>Motivo:</strong> RAL<br>             <strong>Data Fechamento:</strong> 2025-04-05 00:00:00             </div>`)[0];
+                popup_ce8830f5043bf4ec85b59305c4992da8.setContent(html_d6098e2e29681207c0eb4780da5becd8);
+            
+        
+
+        marker_00b4139d033b00ee0e958840a2745c48.bindPopup(popup_ce8830f5043bf4ec85b59305c4992da8)
+        ;
+
+        
+    
+    
+                marker_00b4139d033b00ee0e958840a2745c48.setIcon(icon_0ddf4aa64dd9cb85b6259f057dd585a0);
+            
+    
+            var marker_1a6ad90c27db65033aeb31031f84d543 = L.marker(
+                [-20.284783068898577, -40.300349052739065],
+                {
+}
+            ).addTo(marker_cluster_9a2f939b946aa86a1df5f86e2e99e365);
+        
+    
+            var icon_d162a0441d50d333d19c61bf5272c821 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_426dd25ba59118c2c5f2b44ab7b4429a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_692510092b8db6e10f4c6c8522c4786d = $(`<div id="html_692510092b8db6e10f4c6c8522c4786d" style="width: 100.0%; height: 100.0%;">             <strong>Endereço:</strong> Av. Dr. Pedro Feu Rosa, 90 - Jardim da Penha, Vitória<br>             <strong>Data Abertura:</strong> 2025-03-09 03:20:00<br>             <strong>Motivo:</strong> RAL<br>             <strong>Data Fechamento:</strong> 2025-03-10 00:00:00             </div>`)[0];
+                popup_426dd25ba59118c2c5f2b44ab7b4429a.setContent(html_692510092b8db6e10f4c6c8522c4786d);
+            
+        
+
+        marker_1a6ad90c27db65033aeb31031f84d543.bindPopup(popup_426dd25ba59118c2c5f2b44ab7b4429a)
+        ;
+
+        
+    
+    
+                marker_1a6ad90c27db65033aeb31031f84d543.setIcon(icon_d162a0441d50d333d19c61bf5272c821);
+            
+    
+            var marker_d0df5a5070073b66bfac8909bdd9dec3 = L.marker(
+                [-20.28429965, -40.30167166899088],
+                {
+}
+            ).addTo(marker_cluster_9a2f939b946aa86a1df5f86e2e99e365);
+        
+    
+            var icon_1f163b14b7a2d22f42570060892cdde3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bceb0248104245438d95c8ba40281ef8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d047cbc861a54a047f1cef35d9ce0e54 = $(`<div id="html_d047cbc861a54a047f1cef35d9ce0e54" style="width: 100.0%; height: 100.0%;">             <strong>Endereço:</strong> Av. Hugo Viola, 90 - Jardim da Penha, Vitória<br>             <strong>Data Abertura:</strong> 2025-04-03 09:52:00<br>             <strong>Motivo:</strong> RAL<br>             <strong>Data Fechamento:</strong> 2025-04-03 00:00:00             </div>`)[0];
+                popup_bceb0248104245438d95c8ba40281ef8.setContent(html_d047cbc861a54a047f1cef35d9ce0e54);
+            
+        
+
+        marker_d0df5a5070073b66bfac8909bdd9dec3.bindPopup(popup_bceb0248104245438d95c8ba40281ef8)
+        ;
+
+        
+    
+    
+                marker_d0df5a5070073b66bfac8909bdd9dec3.setIcon(icon_1f163b14b7a2d22f42570060892cdde3);
+            
+    
+            var marker_18afb1aa6ce41308f5889d1f07b44ee3 = L.marker(
+                [-20.28429965, -40.30167166899088],
+                {
+}
+            ).addTo(marker_cluster_9a2f939b946aa86a1df5f86e2e99e365);
+        
+    
+            var icon_f4bd58eb9959ff1110e65fb00d9aa641 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_68ecf72c08883880280d975388e47c23 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a5270016131e04d07e420c763c600457 = $(`<div id="html_a5270016131e04d07e420c763c600457" style="width: 100.0%; height: 100.0%;">             <strong>Endereço:</strong> Av. Hugo Viola, 90 - Jardim da Penha, Vitória<br>             <strong>Data Abertura:</strong> 2025-04-05 03:31:00<br>             <strong>Motivo:</strong> RAL<br>             <strong>Data Fechamento:</strong> 2025-04-05 00:00:00             </div>`)[0];
+                popup_68ecf72c08883880280d975388e47c23.setContent(html_a5270016131e04d07e420c763c600457);
+            
+        
+
+        marker_18afb1aa6ce41308f5889d1f07b44ee3.bindPopup(popup_68ecf72c08883880280d975388e47c23)
+        ;
+
+        
+    
+    
+                marker_18afb1aa6ce41308f5889d1f07b44ee3.setIcon(icon_f4bd58eb9959ff1110e65fb00d9aa641);
+            
+    
+            var marker_d3893df0fbb42b37243586eac6513df0 = L.marker(
+                [-20.3188211, -40.33140787996679],
+                {
+}
+            ).addTo(marker_cluster_9a2f939b946aa86a1df5f86e2e99e365);
+        
+    
+            var icon_a870b62709c1c389c1caa5ab5e51b893 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4d5c8dca68e31530f2c0d2841a0972a0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_376c60834424342eaf44dbb20a353790 = $(`<div id="html_376c60834424342eaf44dbb20a353790" style="width: 100.0%; height: 100.0%;">             <strong>Endereço:</strong> Av. Jerônimo Monteiro, 871 - Centro, Vitória<br>             <strong>Data Abertura:</strong> 2024-12-19 07:34:00<br>             <strong>Motivo:</strong> RAL<br>             <strong>Data Fechamento:</strong> 2025-01-23 00:00:00             </div>`)[0];
+                popup_4d5c8dca68e31530f2c0d2841a0972a0.setContent(html_376c60834424342eaf44dbb20a353790);
+            
+        
+
+        marker_d3893df0fbb42b37243586eac6513df0.bindPopup(popup_4d5c8dca68e31530f2c0d2841a0972a0)
+        ;
+
+        
+    
+    
+                marker_d3893df0fbb42b37243586eac6513df0.setIcon(icon_a870b62709c1c389c1caa5ab5e51b893);
+            
+    
+            marker_cluster_9a2f939b946aa86a1df5f86e2e99e365.addTo(map_461c013f4a45cb61448cb7daf0ef062b);
+        
+</script>
+</html>
